@@ -1,1 +1,1 @@
-export const GET_ALL_POKEMONS_EP = "pokemon";
+export const GET_ALL_POKEMONS_EP = "pokemon?limit=50";

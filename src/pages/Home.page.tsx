@@ -1,4 +1,5 @@
 import { GetAllPokemonsAPI } from "apis";
+import { PokemonBox } from "components";
 import { usePokemonStore } from "hooks";
 import { MainLayout } from "layouts";
 import { useEffect } from "react";
@@ -21,10 +22,10 @@ export const HomePage = () => {
 
   return (
     <MainLayout>
-      <div>
+      <div className="flex flex-wrap items-center justify-between gap-[10px]">
         {
-          pokemonsList.map((pokemonItem: any) => (
-            <p>{pokemonItem.name}</p>
+          pokemonsList.map((pokemonItem: any, index: number) => (
+            <PokemonBox pokemonData={{...pokemonItem, index}} key={pokemonItem.name}/>
           ))
         }
       </div>
