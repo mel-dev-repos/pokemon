@@ -1,8 +1,8 @@
 export const pokemonStore = ((set: any) => ({
   pokemons: [],
-  pokemonDetails: {},
+  pokemonDetails: Object,
   setPokemons: (pokemons: any[]) => set(() => ({ pokemons: pokemons })),
-  setPokemonDetails: () => set((state: {}) => ({ pokemonDetails: state })),
+  setPokemonDetails: (pokemonDetails: any) => set(() => ({ pokemonDetails: pokemonDetails })),
   fetchData: async (apiFunction: any) => {
     try {
       return await apiFunction();
