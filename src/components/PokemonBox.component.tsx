@@ -21,11 +21,12 @@ export const PokemonBox = ({ pokemonData }: { pokemonData: any }) => {
       w-[200px] h-[100px]
       rounded-md
       bg-slate-300 hover:bg-slate-400
-      transition ease-in-out delay-150
+      transition ease-in-out
       flex justify-between items-center	flex-col
+      hover:scale-105
     ">
       <p>Name: <span className="font-bold">{pokemonData.name}</span></p>
-      <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+      <button className="bg-[#1f2937] hover:bg-red text-white font-bold py-2 px-4 rounded inline-flex items-center">
         <QuestionMarkCircleIcon className="h-6 w-6 text-white" />
         <span className="pl-[10px]" onClick={gotoDetails}>Details</span>
       </button>
