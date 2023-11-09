@@ -6,7 +6,9 @@ export const MainLayout = ({children}: {children: React.ReactNode}) => {
   return(
     <main>
       <Header/>
-      {children}
+      <section className="min-h-[60vh] m-[15px]">
+        {children}
+      </section>
       <Footer/>
     </main>
   )
