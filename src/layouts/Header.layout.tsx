@@ -3,19 +3,25 @@ import { PATHS } from "configs";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
-    <header className="flex items-center justify-between p-4 bg-gray-800 text-white">
+    <header className="flex flex-col sm:flex-row items-center justify-between p-4 bg-gray-800 text-white">
       <div className="flex items-center">
         <CubeIcon className="h-6 w-6 text-gray-500" />
-        <h1 className="text-xl font-bold pl-[15px]">Pokemon Site</h1>
+        <h1 className="text-xl font-bold pl-2 sm:pl-4">Pokemon Site</h1>
       </div>
-      <nav>
-        <ul className="flex space-x-4">
-          <li className="hover:text-gray-300 cursor-pointer" onClick={() => Navigate(PATHS.POKEMON_DETAILS)}>Last Item</li>
-          <li className="hover:text-gray-300 cursor-pointer" onClick={() => Navigate(PATHS.ABOUT_US)}>About Us</li>
-          <li className="hover:text-gray-300 cursor-pointer" onClick={() => Navigate(PATHS.HOME)}>Home</li>
+      <nav className="mt-4 sm:mt-0">
+        <ul className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+          <li className="hover:text-gray-300 cursor-pointer" onClick={() => navigate(PATHS.POKEMON_DETAILS)}>
+            Last Item
+          </li>
+          <li className="hover:text-gray-300 cursor-pointer" onClick={() => navigate(PATHS.ABOUT_US)}>
+            About Us
+          </li>
+          <li className="hover:text-gray-300 cursor-pointer" onClick={() => navigate(PATHS.HOME)}>
+            Home
+          </li>
         </ul>
       </nav>
     </header>
