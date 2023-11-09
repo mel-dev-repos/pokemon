@@ -1,13 +1,13 @@
-import { create } from 'zustand';
-import { pokemonStoreType } from './types';
-
-export const usePokemonStore = create<pokemonStoreType>()((set: any) => ({
+export const pokemonStore = ((set: any) => ({
   pokemons: [],
   pokemonDetails: {},
-  setPokemons: () => set((state: any[]) => ({ pokemons: state })),
+  setPokemons: (pokemons: any[]) => set(() => ({ pokemons: pokemons })),
   setPokemonDetails: () => set((state: {}) => ({ pokemonDetails: state })),
-  fetchData: async (API: any) => {
-    const res = await API;
-    await set({ res });
+  fetchData: async (apiFunction: any) => {
+    try {
+      return await apiFunction();
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   },
 }));
